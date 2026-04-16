@@ -1,167 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official landing page for your app - features, download, and privacy policy." />
-  <meta name="theme-color" content="#0f172a" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Smart MCQ learning app - transform study materials into interactive exams."/>
+<meta name="theme-color" content="#0b1220"/>
 
-  <title>Your App Name</title>
+<title>Your App</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Poppins;
+}
 
-    body {
-      background: #0f172a;
-      color: #fff;
-      line-height: 1.6;
-    }
+body{
+  background:#0b1220;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    header {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* gradient background animation */
+.bg-glow{
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#38bdf8,transparent 60%);
+  top:-200px;
+  left:-200px;
+  filter:blur(80px);
+  animation:float 6s infinite ease-in-out;
+}
 
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      color: #38bdf8;
-    }
+.bg-glow2{
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#a78bfa,transparent 60%);
+  bottom:-200px;
+  right:-200px;
+  filter:blur(80px);
+  animation:float 8s infinite ease-in-out;
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(30px)}
+}
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  position:sticky;
+  top:0;
+  background:rgba(11,18,32,0.7);
+  backdrop-filter:blur(10px);
+  z-index:10;
+}
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
+.logo{
+  font-weight:700;
+  color:#38bdf8;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-size:14px;
+  opacity:.8;
+}
+nav a:hover{opacity:1;color:#38bdf8}
 
-    .hero p {
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: auto;
-    }
+.hero{
+  text-align:center;
+  padding:120px 20px 60px;
+}
 
-    .buttons {
-      margin-top: 30px;
-    }
+.hero h1{
+  font-size:50px;
+  background:linear-gradient(90deg,#38bdf8,#a78bfa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:fadeUp 1s ease;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      margin: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.hero p{
+  max-width:600px;
+  margin:20px auto;
+  color:#cbd5e1;
+  animation:fadeUp 1.2s ease;
+}
 
-    .primary {
-      background: #38bdf8;
-      color: #000;
-    }
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-    .primary:hover {
-      background: #0ea5e9;
-    }
+.btns{
+  margin-top:25px;
+}
 
-    .secondary {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
+.btn{
+  padding:12px 22px;
+  margin:10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  display:inline-block;
+  transition:.3s;
+}
 
-    .secondary:hover {
-      background: #38bdf8;
-      color: #000;
-    }
+.primary{
+  background:#38bdf8;
+  color:#000;
+}
+.primary:hover{transform:scale(1.05)}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 60px 40px;
-    }
+.secondary{
+  border:1px solid #38bdf8;
+  color:#38bdf8;
+}
+.secondary:hover{
+  background:#38bdf8;
+  color:#000;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-    }
+.section{
+  padding:80px 40px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: #94a3b8;
-    }
-  </style>
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#111a2e;
+  padding:20px;
+  border-radius:15px;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  background:#16213a;
+}
+
+.screens{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:20px;
+}
+
+.screens img{
+  width:250px;
+  border-radius:15px;
+  transition:.3s;
+}
+.screens img:hover{
+  transform:scale(1.05);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  font-size:13px;
+}
+</style>
 </head>
 
 <body>
+
+<div class="bg-glow"></div>
+<div class="bg-glow2"></div>
 
 <header>
   <div class="logo">YourApp</div>
   <nav>
     <a href="#features">Features</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="#screens">Screens</a>
+    <a href="privacy.html">Privacy</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Welcome to YourApp</h1>
+  <h1>Transform Your Study Experience</h1>
   <p>
-    A powerful application designed to simplify your workflow, improve productivity,
-    and deliver a smooth user experience.
+    Turn your study materials into interactive MCQ exams, organized revision,
+    and smart learning tools designed for better retention.
   </p>
 
-  <div class="buttons">
-    <a href="#features" class="btn primary">Get Started</a>
-    <a href="privacy.html" class="btn secondary">Privacy Policy</a>
+  <div class="btns">
+    <a class="btn primary" href="#features">Get Started</a>
+    <a class="btn secondary" href="privacy.html">Privacy Policy</a>
   </div>
 </section>
 
-<section id="features" class="features">
-  <div class="card">
-    <h3>Fast Performance</h3>
-    <p>Optimized for speed and smooth experience on all devices.</p>
-  </div>
+<section id="features" class="section">
+  <h2 style="text-align:center;margin-bottom:30px;">Features</h2>
 
-  <div class="card">
-    <h3>Secure</h3>
-    <p>Your data is protected with modern encryption standards.</p>
-  </div>
+  <div class="cards">
+    <div class="card">
+      <h3>Smart MCQ Generator</h3>
+      <p>Convert your study files into interactive questions automatically.</p>
+    </div>
 
-  <div class="card">
-    <h3>User Friendly</h3>
-    <p>Simple and clean UI designed for everyone.</p>
+    <div class="card">
+      <h3>Organized Learning</h3>
+      <p>Track progress and revise topics efficiently.</p>
+    </div>
+
+    <div class="card">
+      <h3>Offline Support</h3>
+      <p>Access your content anytime without internet.</p>
+    </div>
+  </div>
+</section>
+
+<section id="screens" class="section">
+  <h2 style="text-align:center;margin-bottom:20px;">App Screenshots</h2>
+
+  <div class="screens">
+    <img src="https://via.placeholder.com/250x500/38bdf8/000?text=Home"/>
+    <img src="https://via.placeholder.com/250x500/a78bfa/000?text=MCQs"/>
+    <img src="https://via.placeholder.com/250x500/22c55e/000?text=Progress"/>
   </div>
 </section>
 
 <footer>
-  © 2026 YourApp. All rights reserved.
+  © 2026 YourApp — All rights reserved
 </footer>
 
 </body>
