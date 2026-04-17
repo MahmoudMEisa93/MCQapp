@@ -54,7 +54,7 @@ body::before{
   transform:translateX(-50%);
 }
 
-/* TITLE FIXED (NO GRADIENT BUG) */
+/* TITLE */
 h1{
   font-size:52px;
   color:#ffffff;
@@ -73,14 +73,17 @@ p{
   font-size:16px;
 }
 
-/* FLOAT ANIMATION */
+/* FLOAT */
 @keyframes float {
   0% {transform: translateY(0px);}
   50% {transform: translateY(-12px);}
   100% {transform: translateY(0px);}
 }
 
-/* BUTTONS FIXED */
+/* =========================
+   BUTTON SYSTEM (UNIFIED)
+========================= */
+
 .btn{
   display:inline-block;
   padding:14px 28px;
@@ -89,12 +92,16 @@ p{
   text-decoration:none;
   font-weight:600;
   transition:0.3s;
+  position:relative;
+  overflow:hidden;
 }
 
+/* PRIMARY */
 .primary{
   background:linear-gradient(45deg,#6366f1,#22c55e);
   color:white;
   box-shadow:0 0 20px rgba(99,102,241,0.6);
+  border:1px solid rgba(255,255,255,0.08);
 }
 
 .primary:hover{
@@ -102,15 +109,19 @@ p{
   box-shadow:0 0 40px rgba(99,102,241,1);
 }
 
+/* SECONDARY */
 .secondary{
-  border:1px solid #6366f1;
-  color:white;
   background:rgba(99,102,241,0.15);
+  border:1px solid rgba(99,102,241,0.6);
+  color:white;
+  backdrop-filter:blur(8px);
 }
 
 .secondary:hover{
   background:#6366f1;
   color:white;
+  box-shadow:0 0 25px rgba(99,102,241,0.7);
+  transform:scale(1.05);
 }
 
 /* SECTIONS */
@@ -171,6 +182,7 @@ Futuristic MCQ learning platform designed to help students and professionals
 practice exams, track progress, and improve performance with smart analytics.
 </p>
 
+<!-- TOP BUTTONS (NOW SAME STYLE AS BOTTOM) -->
 <div style="margin-top:30px;">
 <a href="#features" class="btn primary">Explore Features</a>
 <a href="privacy.html" class="btn secondary">Privacy Policy</a>
